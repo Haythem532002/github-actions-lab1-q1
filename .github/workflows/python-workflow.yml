@@ -2,13 +2,16 @@ name: CI
 
 on:
   push:  
-    branches: main
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      run: actions/checkout@v4
+      
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
